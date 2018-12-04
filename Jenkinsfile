@@ -58,7 +58,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn clean deploy -Dmaven.test.skip=true -DskipITs -X'
+                sh 'mvn clean deploy -Dmaven.test.skip=true -DskipITs'
             }
         }
         stage('Release') {
