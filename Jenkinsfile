@@ -39,13 +39,11 @@ pipeline {
         stage('Test'){
             steps {
                 sh 'mvn install -P coverage -DskipITs'
-                junit '**/target/surefire-reports/*.xml'
             }
         }
         stage('Mutation Test'){
             steps {
                 sh 'mvn org.pitest:pitest-maven:mutationCoverage'
-                junit '**/target/surefire-reports/*.xml'
             }
         }
         stage('Static Analysis'){
@@ -60,8 +58,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn clean deploy -Dmaven.test.skip=true -DskipITs'
-                archiveArtifacts '**/target/*.jar'
+                sh 'mvn clean deploy -Dmaven.test.skip=true -DskipITs -X'
             }
         }
         stage('Release') {
