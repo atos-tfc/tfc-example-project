@@ -1,3 +1,3 @@
 @Library('groovy-scripts') _
 
-tfcBuildPipeline(false)
+tfcBuildPipeline(mutationTest: false, integrationTest: false, staticAnalysis: false)
