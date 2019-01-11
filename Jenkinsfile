@@ -1,3 +1,3 @@
 @Library('groovy-scripts') _
 
-scriptedPipeline()
+scriptedPipeline(false)
