@@ -1,3 +1,3 @@
 @Library('groovy-scripts') _
 
-tfcBuildPipeline()
+tfcMavenBuildPipeline()
